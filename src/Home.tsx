@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
     background: {
@@ -17,19 +17,22 @@ const Home = () => {
 
     return (
         <ImageBackground
-            source={require('../assets/background_image.jpg')}
-            resizeModel='cover'
+            source={require('../assets/background_image.jpg')} // Background image
+            resizeMode='cover' // Covers the screen
             style={styles.background, { width, height }}
         >
             <View
                 style={styles.container}
             >
                 {/* Joika logo */}
-                <Text>Logo</Text>
+                <Image
+                    source={require('../assets/joika_logo_green.png')}
+                    style={{ width: 200, height: 80 }}
+                />
                 {/* Navigation */}
-                <Text>Navigation 1</Text>
-                <Text>Navigation 2</Text>
-                <Text>Navigation 3</Text>
+                <Text>Avaa kartta</Text>
+                <Text>Vaihda teema</Text>
+                <Text>Tietokirja</Text>
             </View>
         </ImageBackground>
     );

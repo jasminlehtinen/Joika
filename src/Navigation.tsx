@@ -16,7 +16,6 @@ const Navigation = () => {
                     name="home"
                     component={Home}
                     options={{
-                        tabBarLabel: 'Home',
                         tabBarIcon: ({ color, size }) => (
                             <Ionicons name='home-sharp' size={32} color='black' />
                         ),
