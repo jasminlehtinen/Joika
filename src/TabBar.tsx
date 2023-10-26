@@ -40,9 +40,9 @@ const TabBar = ({ state, descriptors, navigation }) => {
                     >
                         <Ionicons
                             name={
-                                route.name === 'search' ? 'ios-search' :
-                                route.name === 'home' ? 'ios-home' :
-                                route.name === 'map' ? 'ios-map' : 'ios-home-outline'
+                                route.name === 'search' ? 'search-outline' :
+                                route.name === 'home' ? 'home-outline' :
+                                route.name === 'map' ? 'compass-outline' : ''
                             }
                             size={32}
                             color={isFocused ? 'black' : 'gray'}
