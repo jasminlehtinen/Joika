@@ -20,7 +20,10 @@ const MapPlaceholder = () => (
 const Navigation = () => {
     return (
         <NavigationContainer>
-            <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
+            <Tab.Navigator
+                initialRouteName="home" // Default screen
+                tabBar={(props) => <TabBar {...props} />}
+            >
                 <Tab.Screen
                     name="search"
                     component={SearchPlaceholder}

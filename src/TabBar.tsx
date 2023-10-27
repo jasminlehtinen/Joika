@@ -47,13 +47,14 @@ const TabBar = ({ state, descriptors, navigation }) => {
                             size={32}
                             color={isFocused ? 'black' : 'gray'}
                         />
+                        {/* Adds a black underline under the active tab's icon */}
                         {isFocused && (
                             <View
                                 // Create separate StyleSheet later!
                                 style={{
                                     position: 'absolute',
                                     bottom: 0,
-                                    width: '100%',
+                                    width: '50%',
                                     height: 3,
                                     backgroundColor: 'black',
                                 }}
