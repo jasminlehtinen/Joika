@@ -27,48 +27,20 @@ const Navigation = () => {
                 <Tab.Screen
                     name="search"
                     component={SearchPlaceholder}
+                    options={{ tabBarLabel: 'Search', headerShown: false }}
                 />
                 <Tab.Screen
                     name="home"
                     component={Home}
+                    options={{ tabBarLabel: 'Home', headerShown: false }}
                 />
                 <Tab.Screen
                     name="map"
                     component={MapPlaceholder}
+                    options={{ tabBarLabel: 'Map', headerShown: false }}
                 />
             </Tab.Navigator>
         </NavigationContainer>
-        /*<NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen
-                    name="search"
-                    component={SearchPlaceholder}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="search" size={32} color='black' />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="home"
-                    component={Home}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name='home-outline' size={32} color='black' />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="map"
-                    component={MapPlaceholder}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name='compass-outline' size={32} color='black' />
-                        ),
-                    }}
-                />
-            </Tab.Navigator>
-        </NavigationContainer>*/
     );
 };
 
