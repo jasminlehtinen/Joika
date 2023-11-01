@@ -6,9 +6,20 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    containerContent: {
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        flex: 0.4,
+        flex: 0.5,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
         width: '70%',
+    },
+    containerText: {
+        paddingVertical: 7,
+        fontSize: 20,
     },
 });
 
@@ -21,18 +32,20 @@ const Home = () => {
             resizeMode='cover' // Covers the screen
             style={styles.background, { width, height }}
         >
-            <View
-                style={styles.container}
-            >
-                {/* Joika logo */}
-                <Image
-                    source={require('../assets/joika_logo_green.png')}
-                    style={{ width: 200, height: 80 }}
-                />
-                {/* Navigation */}
-                <Text>Avaa kartta</Text>
-                <Text>Vaihda teema</Text>
-                <Text>Tietokirja</Text>
+            <View style={styles.container}>
+                <View style={styles.containerContent}>
+                    {/* Joika logo */}
+                    <Image
+                        source={require('../assets/joika_logo_green.png')}
+                        style={{ width: 200, height: 80 }}
+                    />
+                    <View>
+                        {/* Navigation */}
+                        <Text style={styles.containerText}>Avaa kartta</Text>
+                        <Text style={styles.containerText}>Vaihda teema</Text>
+                        <Text style={styles.containerText}>Tietokirja</Text>
+                    </View>
+                </View>
             </View>
         </ImageBackground>
     );
