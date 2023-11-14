@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, ImageBackground, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
     background: {
@@ -21,14 +21,26 @@ const styles = StyleSheet.create({
         paddingVertical: 7,
         fontSize: 20,
     },
+    textDecoration: {
+        fontWeight: 'bold',
+        color: 'rgba(47, 101, 125, 1)'
+    },
 });
 
-const Home = () => {
+const Home = ({ navigation }) => {
     const { width, height } = Dimensions.get('window') // Using Dimensions API to get the screen dimensions
+
+    const navigateToMap = () => {
+        navigation.navigate('MapScreen') // Map added later
+    };
+
+    const navigateToTheme = () => {
+        navigation.navigate('ThemeScreen') // Theme added later
+    };
 
     return (
         <ImageBackground
-            source={require('../assets/background_image.jpg')} // Background image
+            source={require('../assets/background_image_blue.jpg')} // Background image
             resizeMode='cover' // Covers the screen
             style={styles.background, { width, height }}
         >
@@ -36,14 +48,24 @@ const Home = () => {
                 <View style={styles.containerContent}>
                     {/* Joika logo */}
                     <Image
-                        source={require('../assets/joika_logo_green.png')}
+                        source={require('../assets/joika_logo_blue.png')}
                         style={{ width: 200, height: 80 }}
                     />
                     <View>
-                        {/* Navigation */}
-                        <Text style={styles.containerText}>Avaa kartta</Text>
-                        <Text style={styles.containerText}>Vaihda teema</Text>
-                        <Text style={styles.containerText}>Tietokirja</Text>
+                        <TouchableOpacity onPress={navigateToMap}>
+                            <Text style={styles.containerText}>
+                                <Text style={styles.textDecoration}>Avaa</Text> kartta
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={navigateToTheme}>
+                            <Text style={styles.containerText}>
+                                <Text style={styles.textDecoration}>Vaihda</Text> teema
+                            </Text>
+                        </TouchableOpacity>
+                        { /* Add navigation? */ }
+                        <Text style={styles.containerText}>
+                            <Text style={styles.textDecoration}>Tietokirja</Text>
+                        </Text>
                     </View>
                 </View>
             </View>

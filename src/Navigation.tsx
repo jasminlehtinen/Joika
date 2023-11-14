@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Icon library
@@ -8,14 +9,18 @@ import TabBar from './TabBar'
 const Tab = createBottomTabNavigator();
 
 // Placeholder for Search component
-const SearchPlaceholder = () => (
-    <></> // Empty fragment that doesn't render anything
-)
+const SearchPlaceholder = () => {
+    return (
+        <View>
+            <Text>To be continued...</Text>
+        </View>
+    );
+};
 
 // Placeholder for Map component
 const MapPlaceholder = () => (
     <></> // Empty fragment that doesn't render anything
-)
+);
 
 const Navigation = () => {
     return (
